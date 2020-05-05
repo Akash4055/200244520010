@@ -28,10 +28,19 @@ To use S3 we need to create Bucket inside S3 service.
 #### follow steps 
 ###### `1. Click on service dropdown then click on S3`
 ![Image](images/S3.png)
+
+
 ###### `2. Click on 'create bucket' option`
+
 ![Image](images/create.png)
+
+
 ###### `3. Give unique name to your S3 bucket --> Block access -->> create bucket`
+
 ![Image](images/name.png)
+
+
 ###### `4. Done !!`
+
 ![Image](images/created.png)
 
