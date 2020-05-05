@@ -13,6 +13,6 @@
 
 `1. select EC2 from service dropdown`
 
-![Image](EC2/Creating_EC2/images/ec1.png)
+![Image](https://github.com/Akash4055/200244520010/blob/AWS-assignment/EC2/Creating_EC2/images/ec1.png)
 ---
 `2.`
