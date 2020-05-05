@@ -15,3 +15,4 @@
 Security group is just like firewall which have inbound and outbound rules 
 which defines different port for different services and how access to be given to EC2.
 
+![Image](images/DAY2.png)
