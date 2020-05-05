@@ -7,12 +7,12 @@
     4. No need to pay charge of ram ,os when your ec2 is stop.
 ---
 
-#### how to create EC2 instance ?
+#### How to create EC2 instance ?
 
 ---
 
 `1. select EC2 from service dropdown`
 
-![Image](/images/ec1.png)
+![Image](EC2/Creating_EC2/images/ec1.png)
 ---
 `2.`
