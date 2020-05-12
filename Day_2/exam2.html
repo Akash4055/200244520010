@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam day 2</title>
+    </head>
+    <body>
+        <h5> Question 1 : </h5>
+            <button onclick="maxnumber()">Answer</button><br>
+            Array :<p id="arr"></p>
+            <p id="mx"> </p>
+        
+        <br>
+        <hr>
+        <h5> Question 2 : </h5>
+            <button onclick="ptag()">Answer</button><br>
+            Name :<p id="ptag"></p>
+        <br>
+        <hr>
+        <h5> Question 3 : </h5>
+            Name : <p id="hdn" style="display: none;"> Akash Dhawale</p>
+            <button onclick="hdn()">Answer</button><br>
+        <br>
+        <hr>
+        <h5> Question 4 : </h5>
+        Name : <p id="fnt" style="font-size: 4pt;"> Akash dhawale</p>
+        <button onclick="fnt()">Answer</button><br>
+        <br>
+        <hr>
+        <h5> Question 5 : </h5>
+        Date & Time : 
+        <p id="dt"></p>
+        <button onclick="DateTime()">Answer</button><br>
+        <br>
+        <hr>
+        <h5> Question 6: </h5>
+        Text 1 : <input type="text" id="txt1"/>&nbsp; Text 2 :<input type="text" id="txt2"/>
+        <button onclick="txtChange()">Answer</button><br>
+        <br>
+        <hr>
+        <h5> Question 7 : </h5>
+            <button onclick="sortAsc()">Answer</button><br>
+            Array :
+            <p id="asc"> </p>
+            <p id="sortasc"> </p>
+        <br>
+        <hr>
+        <h5> Question 8 : </h5>
+            <button onclick="Nsortdsc()">Answer</button><br>
+            original Array :
+            <p id="Ndsc"> </p>
+            Reversed array :
+            <p id="Nsortdsc"> </p>
+        <br>
+        <hr>
+        <h5> Question 9 : </h5>
+            <button onclick="checkN
+            um()">Answer</button><br>
+            <p id="rnd"> </p>
+        <br>
+        <hr>
+        <h5> Question 11 : </h5>
+            <button onclick="rndNum()">Answer</button><br>
+            <p id="rnd"> </p>
+        <br>
+        <hr>
+        <script>
+            
+            function maxnumber(){
+                var num=[20,10,5,0,1,2,6,84,12,100];
+                document.getElementById("arr").innerHTML=num;
+                num.sort();
+                document.getElementById("mx").innerHTML=num[0];
+            }
+            function ptag()
+            {
+                document.getElementById("ptag").type="text";
+                document.getElementById("ptag").innerHTML="Akash Dhawale";
+            }
+            function hdn()
+            {
+                document.getElementById("hdn").style.display='block';
+            }
+            function fnt()
+            {
+                document.getElementById("fnt").style.fontSize="7pt";
+            }
+            function DateTime()
+            {
+                document.getElementById("dt").innerHTML=Date();
+            }
+            function txtChange()
+            {
+                var a=document.getElementById("txt1").value;
+                var b=document.getElementById("txt2").value;
+                document.getElementById("txt1").value=b;
+                document.getElementById("txt2").value=a;
+            }
+            function sortAsc(){
+                var num=[20,10,5,0,1,2,6,84,12,100];
+                document.getElementById("asc").innerHTML=num;
+                num.sort();
+                document.getElementById("sortasc").innerHTML=num;
+            }
+            function Nsortdsc()
+            {
+                var nam=["Hp","Dell","Lenovo","Asus"];
+                document.getElementById("Ndsc").innerHTML=nam;
+                nam.sort();
+                nam.reverse();
+                document.getElementById("Nsortdsc").innerHTML=nam;
+            }
+            function rndNum()
+            {
+                document.getElementById("rnd").innerHTML=Math.random();
+            }
+        </script>    
+    </body>
+</html>
