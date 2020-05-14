@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exam day 3</title>
+    </head>
+    <body>
+        <h4>Question 1 :</h4>
+         Enter a Number : <input type="number" name="fact" id="ft"><br><br><br>
+        <button onclick="funFact(document.getElementById('ft').value)">Get Factorial</button><br><br><br>
+        Factorial is :<p id="answer"></p><br>
+        <hr>
+        <h4>Question 3 :</h4>
+        Enter a Number : <input type="number" name="square" id="sqr"><br><br><br>
+        <button onclick="math.Square(document.getElementById('sqr').value)">Get Square</button>&nbsp;&nbsp;
+        <button onclick="math.Cube(document.getElementById('sqr').value)">Get Cube</button><br><br><br>
+        Square is :<p id="ansSq"></p><br>
+        cube is :<p id="ansCu"></p><br>
+        <hr>
+        <h4>Question 2 :</h4>
+        Enter a Name : 
+        <select name="nm" id="nm">
+            <option value="Akash">Akash</option>
+            <option value="Suraj">Suraj</option>
+        </select><br><br><br>
+        Deposit Amount: <input type="number" name="iDepo" id="iDepo"><br><br><br>
+        <button onclick="deposit(document.getElementById('nm').value,document.getElementById('iDepo').value)">Deposit </button>&nbsp;&nbsp;
+        <button onclick="checkBal(document.getElementById('nm').value)">Balance </button><br><br><br>
+        Balance is  :<p id="dep">0</p><br>
+        <hr>
+    </body>
+    <script>
+        var funFact=(x)=>{
+            var fact=1;
+            for(let i=2;i<=x;i++)
+            {
+                fact=fact*i;
+            }
+            document.getElementById("answer").innerHTML=fact;
+        }
+    </script>
+    <script>
+        class math{
+            static Square=(x)=>{
+                document.getElementById("ansSq").innerHTML=x*x;
+            }
+            static Cube=(x)=>{
+                document.getElementById("ansCu").innerHTML=x*x*x;
+            }
+        }
+    </script>
+    <script>
+        class account{
+            constructor(name,balance)
+            {
+                this.name=name;
+                this.balance=balance;
+            }
+            get AccBalance()
+            {
+                return this.balance;
+            }
+            get AccName()
+            {
+                return this.name;
+            }
+            set AccAmt(y)
+            {
+                var nw=Number(y);
+                this.balance=this.balance+nw;
+            }
+        }
+
+        Acc1= new account("Akash",100);
+        Acc2= new account("Suraj",200);
+        
+       function deposit(name,amt)
+       {
+        if(name==Acc1.AccName)
+            Acc1.AccAmt=amt;    
+           else
+           Acc2.AccAmt=amt;
+       } 
+       function checkBal(name)
+       {
+           if(name==Acc1.AccName)
+           {
+               document.getElementById("dep").innerHTML= 
+           "Name of account holder :"+Acc1.AccName+ "  and balance is  "+Acc1.AccBalance ;}
+           else
+           {
+            document.getElementById("dep").innerHTML= 
+            "Name of account holder :"+Acc2.AccName+ "  and balance is  "+Acc2.AccBalance ;
+           }
+       }
+    </script>
+</html>
