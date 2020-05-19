@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>       JS Form validation</title> 
+    </head>
+    <body style="background-color: lightslategray;">
+        <fieldset >
+            <form name="Form1">
+                UserID :<input type="text" id="UserID" required>
+                <p id="uid" style="color: rgba(255, 0, 0, 0.548);"></p><br><br>
+                Password :<input type="password" name="pass" id="pass" required>
+                <p id="pid" style="color:  rgba(255, 0, 0, 0.548);"></p><br><br>
+                Mobile :<input type="number" name="mob" id="mob" required> 
+                <p id="mid" style="color:  rgba(255, 0, 0, 0.548);"></p><br><br>
+                Address :<input type="text" name="add" id="add" required> 
+                <p id="aid" style="color:  rgba(255, 0, 0, 0.548);"></p><br><br>
+                Age :<input type="number" name="age" id="age" required> 
+                <p id="ageid" style="color:  rgba(255, 0, 0, 0.548);"></p><br><br><br><br>  
+                <button type="button" onclick="formValidate()">Submit</button>
+            </form>
+        </fieldset>
+    </body>
+    <script>
+        function formValidate()
+        {
+             var a=document.getElementById("UserID").value;
+             var b=document.forms["Form1"]["pass"].value;
+             var c=document.forms["Form1"]["mob"].value;
+             var d=document.forms["Form1"]["add"].value;
+             var e=document.forms["Form1"]["age"].value;
+             var aLen=a.length;
+        if(aLen<3 ||aLen>15)
+        document.getElementById("uid").innerHTML="Enter valid User ID-'User id must be minimum 3  and maximum 15 characters'";
+        else    
+        document.getElementById("uid").innerHTML="valid userID";
+        if(b.length<8)
+        document.getElementById("pid").innerHTML="Too short Password ,Password must have minimum 8 characters";
+        else    
+        document.getElementById("pid").innerHTML="valid Password";
+        if(c.length != 10)
+        document.getElementById("mid").innerHTML="Enter valid mobile number -'Mobile must be a 10 digit number'";
+        else    
+        document.getElementById("mid").innerHTML="valid Mobile Number";
+        if(e<18||e>100)
+        document.getElementById("ageid").innerHTML="Enter valid age -'Age must be between 18 to 100'";
+        else    
+        document.getElementById("ageid").innerHTML="valid Age";
+        if(d.length==0)
+        document.getElementById("aid").innerHTML="Enter Address";
+        else    
+        document.getElementById("aid").innerHTML="";
+        }
+    </script>
+</html>
