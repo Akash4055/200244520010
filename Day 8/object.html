@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <p id="netsal"></p>
+    <p id="netsal2"></p>
+    <p id="std"></p>
+    <script>
+        class Employee
+        {
+            constructor(id,name,salary)
+            {
+                this._id=id;
+                this._name=name;
+                this._salary=salary;
+                this.netsalary=function()
+                {
+                    return this._salary*0.9;
+                }
+            }
+            set id(id){
+                this._id=id;
+            }
+            set name(name){
+                this._name=name;
+            }
+            set salary(salary){
+                this._salary=salary;
+            }
+            get id(){
+                return this._id;
+            }
+            get name(){
+                return this._name;
+            }
+            get salary(){
+                return this._salary;
+            }
+        };
+        Emp1=new Employee(1,"akash",5000);
+        Emp2=new Employee(2,"suraj",10000);
+        document.getElementById("netsal").innerHTML=Emp1.name+" : netsalary is "+Emp1.netsalary();
+        document.getElementById("netsal2").innerHTML=Emp2.name+" : netsalary is "+Emp2.netsalary();
+    </script>
+    <script>
+        class student{
+            constructor(rollNumber,name,marks1,marks2,marks3){
+                this._rollNumber=rollNumber;
+                this._name=name;
+                this._marks1=marks1;
+                this._marks2=marks2;
+                this._marks3=marks3;
+                this.total=function(){
+                    return this._marks1+this._marks2+this._marks3;
+                }
+                this.percentage=function(){
+                    return ((this._marks1+this._marks2+this._marks3)/300)*100;
+                }
+            }
+                set rollNumber(rollNumber){
+                      this._rollNumber=rollNumber;
+                     }
+                set name(name){
+                    this._name=name;
+                }
+                set marks1(marks1){
+                    this._marks1=marks1;
+                }
+                set marks2(marks2){
+                    this._marks2=marks2;
+                }
+                set marks3(marks3){
+                    this._marks3=marks3;
+                }
+                get rollNumber(){
+                    return this._rollNumber;
+                }
+                get name(){
+                    return this._name;
+                }
+                get marks1(){
+                    return this._marks1;
+                }
+                get marks2(){
+                    return this._marks2;
+                }
+                get marks3(){
+                    return this._marks3;
+                }
+        }
+        student1=new student(2,"Ravi",85,80,98);
+        document.getElementById("std").innerHTML=student1.rollNumber+":"+student1.name+":total - "+student1.total()+":percentage - "+student1.percentage();
+    </script>
+</html>
