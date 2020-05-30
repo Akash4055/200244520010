@@ -82,6 +82,7 @@
             <li>sandeep</li>
             <li>pratik</li>
         </ol>
+        <button onclick="question8()">Remove</button>
         <br><hr>
 
         <h3>Question 9</h3>
@@ -159,7 +160,7 @@
                 var b=document.getElementById("q10").value;
                 
                 if (b.length<=0){
-                alert("Please Enter some text");
+                    document.getElementById("Q10").innerHTML="Please Enter Some text.";
                 }
                 else
                 document.getElementById("Q10").innerHTML=b;
