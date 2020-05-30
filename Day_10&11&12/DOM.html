@@ -1,0 +1,203 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>
+            Day 10-11-12
+        </title>
+    </head>
+    <body>
+        <h3>Question 1</h3>
+        Enter Your Name :<input type="text" style=color:red; id="Q1">
+        <br>
+        <br>
+        <button onclick="question1()">Click me</button>
+        <br>
+        <hr>
+
+        <h3>Question 2</h3>
+        <h1 id="Q2" align="left">Akash Dhawale</h1>
+        <br>
+        <br>
+        <button onclick="question2()">Click me</button>
+        <br>
+        <hr>
+
+        <h3>Question 3</h3>
+        <p id="Q3" style="color:white;background-color: blue;">Akash Dhawale</p>
+        <br>
+        <br>
+        <button onclick="question3()">Click me</button>
+        <br>
+        <hr>
+
+        <h3>Question 4</h3>
+        Enter your Name :<input type="text" style="color: black;" id="Q4">
+        <input type="radio" name="color" onclick=question4(this.value) value="red">red
+        <input type="radio" name="color" onclick=question4(this.value) value="blue">blue
+        <input type="radio" name="color" onclick=question4(this.value) value="pink">pink
+        <br>
+        <hr>
+
+        <h3>Question 5</h3>
+        Enter your Name :<input type="text" style="font-size:10pt ;" id="Q5">
+        <select name="font" onclick=question5(this.value)>
+            <option value="1pt">1</option>
+            <option value="2pt">2</option>
+            <option value="3pt">3</option>
+            <option value="4pt">4</option>
+            <option value="5pt">5</option>
+            <option value="6pt">6</option>
+            <option value="7pt">7</option>
+            <option value="8pt">8</option>
+            <option value="9pt">9</option>
+            <option value="10pt">10</option>
+        </select>
+        <br>
+        <hr>
+
+        <h3>Question 6</h3>
+        Number 1 :<input type="number"  id="num1">
+        Number 2 :<input type="number"  id="num2">
+        <br><br>
+        Result :<input type="text"  id="res">
+        <br>
+        <button onclick=add()>Add </button>
+        <button onclick=substract()>substract </button>
+        <br>
+        <hr>
+
+        <h3>Question 7</h3>
+        <p> Hello, my name is Akash Dhawale.I am from aurangabad city.I am born and bottom up in aurangabad. </p>
+        <p>I had completed my schooling from Mulul Mandir school aurangabad with academic score.</p>
+        <p>Thereafter i had choosed my higher education in engineering background.i had completed my diploma in mechanical engineering from MGM's polytechnic. i was awarded as topper of college for three consecutive years</p>
+        <button onclick=question7()>Count of p tag</button>  <br><br>     
+        Count :<p id="Q7"> </p>
+        <br>
+        <hr>
+
+        <h3>Question 8</h3>
+        <ol>
+            <li> ravi</li>
+            <li>Girish</li>
+            <li>sandeep</li>
+            <li>pratik</li>
+        </ol>
+        <br><hr>
+
+        <h3>Question 9</h3>
+        Enter text :<input type="text" id="q9" onchange=question9()>
+        <span id="Q9"></span>
+        <br><hr>
+
+        <h3>Question 10</h3>
+        Enter text :<input type="text" id="q10" onchange="question10()" required>
+        <span id="Q10"></span>
+        <br>
+        <hr>
+
+        <h3>Question 11</h3>
+        Enter password :<input type="password" id="q11" onchange=question11(this.value) required>
+        <span id="Q11"style="color:red" > </span>
+        <br><hr>
+
+        <h3>Question 12</h3>
+        
+        choose books <br>
+        <input type="checkbox" onclick=question12() name="book[]" value="250"> Let us c -250Rs
+        <br><input type="checkbox" onclick=question12() name="book[]" value="350"> c++ -350Rs
+        <br><input type="checkbox" onclick=question12() name="book[]" value="450"> Javascript -450Rs
+        <br><br> Total Price : <input type="text" id="Q12">
+        <script>
+            function question1(){
+                document.getElementById("Q1").style.color="blue";
+            }
+            function question2(){
+               document.getElementById("Q2").setAttribute("align","right");
+            }
+            function question3(){
+                document.getElementById("Q3").style.color="blue";
+                document.getElementById("Q3").style.backgroundColor="white";
+            }
+            function question4(obj){
+                
+                document.getElementById("Q4").style.color=obj;
+            }
+            function question5(fonts){
+                document.getElementById("Q5").style.fontSize=fonts;
+            }
+            //Question 6
+            function add(){
+                
+                var a=parseInt(document.getElementById("num1").value);
+                var b=parseInt(document.getElementById("num2").value);
+                document.getElementById("res").value=a+b;
+            }
+            function substract(){
+                
+                var a=parseInt(document.getElementById("num1").value);
+                var b=parseInt(document.getElementById("num2").value);
+                document.getElementById("res").value=a-b;
+            }
+            function question7(){
+                var ptag=document.getElementsByTagName("p");
+                var len=ptag.length;
+                document.getElementById("Q7").innerHTML=len;
+                var i;
+                for(i=0;i<len;i++){
+                    ptag[i].style.backgroundColor="blue";
+                }
+            }
+            function question8(){
+                var litag=document.getElementsByTagName("li");
+                litag[0].remove();
+            }
+            function question9(){
+                var a=document.getElementById("q9").value;
+                document.getElementById("Q9").innerHTML=a;
+            }
+            function question10(){
+                var b=document.getElementById("q10").value;
+                
+                if (b.length<=0){
+                alert("Please Enter some text");
+                }
+                else
+                document.getElementById("Q10").innerHTML=b;
+            }
+            function question11(txt){
+                var patt=/[A-Z]/;
+                var pass=txt,flag=0;
+                var err="Please";
+
+                if(patt.test(pass)==false){
+                    flag=1
+                    err+=" enter one capital character";
+                }
+                patt=/[0-9]/;
+                if(patt.test(pass)==false){
+                    flag=1
+                    err+=" enter one digit";
+                }
+                patt=/[#?!@$%^&*-]/;
+                if(patt.test(pass)==false){
+                    flag=1
+                    err+=" enter one special character";
+                }
+                if(flag==0){
+                    document.getElementById("Q11").style.color="black";
+                document.getElementById("Q11").innerHTML="password accepted";
+                }
+                else
+                document.getElementById("Q11").innerHTML=err;
+            }
+            function question12(){
+                    var price=0;
+                    var checkedbox=document.querySelectorAll("[name='book[]']:checked");
+                    for(var i=0;i<checkedbox.length;i++){
+                        price+=parseInt(checkedbox[i].value);
+                    }
+                    document.getElementById("Q12").value=price;
+            }
+        </script>
+    </body>
+</html>
